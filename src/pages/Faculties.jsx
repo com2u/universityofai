@@ -1,8 +1,86 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import GradientText from '../components/GradientText'
 
 const Faculties = () => {
+  const [faculties, setFaculties] = useState([])
+  const [filteredFaculties, setFilteredFaculties] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [sortBy, setSortBy] = useState('name')
+  const [sortOrder, setSortOrder] = useState('asc')
+  const [selectedFaculty, setSelectedFaculty] = useState(null)
+  const [showModal, setShowModal] = useState(false)
+
+  useEffect(() => {
+    const fetchFaculties = async () => {
+      try {
+        const response = await fetch('/data/faculties.json')
+        const data = await response.json()
+        setFaculties(data.faculties)
+        setFilteredFaculties(data.faculties)
+        setLoading(false)
+      } catch (error) {
+        console.error('Error fetching faculties:', error)
+        setLoading(false)
+      }
+    }
+
+    fetchFaculties()
+  }, [])
+
+  useEffect(() => {
+    let filtered = faculties.filter(faculty =>
+      faculty.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      faculty.specialization.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      faculty.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      faculty.expertise.some(exp => exp.toLowerCase().includes(searchTerm.toLowerCase()))
+    )
+
+    // Sort the filtered results
+    filtered.sort((a, b) => {
+      let aValue = a[sortBy]
+      let bValue = b[sortBy]
+      
+      if (typeof aValue === 'string') {
+        aValue = aValue.toLowerCase()
+        bValue = bValue.toLowerCase()
+      }
+      
+      if (sortOrder === 'asc') {
+        return aValue < bValue ? -1 : aValue > bValue ? 1 : 0
+      } else {
+        return aValue > bValue ? -1 : aValue < bValue ? 1 : 0
+      }
+    })
+
+    setFilteredFaculties(filtered)
+  }, [faculties, searchTerm, sortBy, sortOrder])
+
+  const handleSort = (field) => {
+    if (sortBy === field) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
+    } else {
+      setSortBy(field)
+      setSortOrder('asc')
+    }
+  }
+
+  const openModal = (faculty) => {
+    setSelectedFaculty(faculty)
+    setShowModal(true)
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+    setSelectedFaculty(null)
+  }
+
+  const getSortIcon = (field) => {
+    if (sortBy !== field) return 'fas fa-sort text-gray-500'
+    return sortOrder === 'asc' ? 'fas fa-sort-up text-foreground-1' : 'fas fa-sort-down text-foreground-1'
+  }
+
   const facultyAreas = [
     {
       title: "AI & Machine Learning",
@@ -101,19 +179,220 @@ const Faculties = () => {
               <i className="fas fa-university text-foreground-1 mr-3"></i>
               Faculty Framework
             </h2>
-            <p className="text-lg text-gray-300 mb-6">
-              Our faculty consists of internationally recognized AI experts, active researchers, 
-              and industry practitioners. Each brings unique expertise and real-world experience 
-              to provide students with cutting-edge knowledge and practical insights.
+            <p className="text-lg text-gray-300 mb-8">
+              Meet our distinguished faculty of AI experts, researchers, and industry practitioners 
+              from around the world. Each brings unique expertise and real-world experience.
             </p>
-            <div className="bg-accent rounded-lg p-6">
-              <p className="text-white text-center font-medium text-lg">
-                <i className="fas fa-info-circle text-foreground-1 mr-2"></i>
-                Faculty profiles and detailed information will be dynamically loaded from the backend system.
-              </p>
+            
+            {/* Search and Filter Controls */}
+            <div className="mb-6 flex flex-col md:flex-row gap-4">
+              <div className="flex-1">
+                <div className="relative">
+                  <i className="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    type="text"
+                    placeholder="Search by name, specialization, country, or expertise..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-foreground-1"
+                  />
+                </div>
+              </div>
+              <div className="text-gray-300 flex items-center">
+                <i className="fas fa-filter mr-2 text-foreground-1"></i>
+                {filteredFaculties.length} of {faculties.length} trainers
+              </div>
             </div>
+
+            {loading ? (
+              <div className="text-center py-12">
+                <i className="fas fa-spinner fa-spin text-4xl text-foreground-1 mb-4"></i>
+                <p className="text-lg font-medium text-white mb-2">Loading Faculty...</p>
+                <p className="text-gray-400">Please wait while we fetch the faculty data.</p>
+              </div>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full bg-gray-900 rounded-lg border border-gray-700">
+                  <thead>
+                    <tr className="bg-gray-800">
+                      <th className="px-6 py-4 text-left text-white font-bold">Photo</th>
+                      <th 
+                        className="px-6 py-4 text-left text-white font-bold cursor-pointer hover:bg-gray-700 transition-colors"
+                        onClick={() => handleSort('name')}
+                      >
+                        <div className="flex items-center gap-2">
+                          Name
+                          <i className={getSortIcon('name')}></i>
+                        </div>
+                      </th>
+                      <th 
+                        className="px-6 py-4 text-left text-white font-bold cursor-pointer hover:bg-gray-700 transition-colors"
+                        onClick={() => handleSort('specialization')}
+                      >
+                        <div className="flex items-center gap-2">
+                          Specialization
+                          <i className={getSortIcon('specialization')}></i>
+                        </div>
+                      </th>
+                      <th 
+                        className="px-6 py-4 text-left text-white font-bold cursor-pointer hover:bg-gray-700 transition-colors"
+                        onClick={() => handleSort('country')}
+                      >
+                        <div className="flex items-center gap-2">
+                          Country
+                          <i className={getSortIcon('country')}></i>
+                        </div>
+                      </th>
+                      <th className="px-6 py-4 text-left text-white font-bold">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filteredFaculties.length === 0 ? (
+                      <tr className="border-t border-gray-700">
+                        <td className="px-6 py-8 text-gray-300 text-center" colSpan="5">
+                          <i className="fas fa-search text-3xl text-gray-500 mb-3"></i>
+                          <p className="text-lg font-medium text-white mb-2">No faculty found</p>
+                          <p className="text-gray-400">Try adjusting your search terms</p>
+                        </td>
+                      </tr>
+                    ) : (
+                      filteredFaculties.map((faculty, index) => (
+                        <tr key={index} className="border-t border-gray-700 hover:bg-gray-800 transition-colors">
+                          <td className="px-6 py-4">
+                            <img 
+                              src={`/data/${faculty.photo}`} 
+                              alt={faculty.name}
+                              className="w-12 h-12 rounded-full object-cover border-2 border-foreground-1"
+                              onError={(e) => {
+                                e.target.src = '/data/p1.png'
+                              }}
+                            />
+                          </td>
+                          <td className="px-6 py-4">
+                            <div>
+                              <h3 className="text-white font-semibold text-lg">{faculty.name}</h3>
+                              <p className="text-gray-400 text-sm">{faculty.email}</p>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4">
+                            <p className="text-gray-300">{faculty.specialization}</p>
+                          </td>
+                          <td className="px-6 py-4">
+                            <div className="flex items-center gap-2">
+                              <i className="fas fa-globe text-foreground-1"></i>
+                              <span className="text-gray-300">{faculty.country}</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4">
+                            <button
+                              onClick={() => openModal(faculty)}
+                              className="bg-foreground-1 hover:bg-blue-600 text-black hover:text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2"
+                            >
+                              <i className="fas fa-eye"></i>
+                              View Details
+                            </button>
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         </section>
+
+        {/* Faculty Details Modal */}
+        {showModal && selectedFaculty && (
+          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50">
+            <div className="bg-gray-900 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-gray-700">
+              <div className="sticky top-0 bg-gray-900 border-b border-gray-700 p-6 flex justify-between items-start">
+                <div className="flex items-center gap-4">
+                  <img 
+                    src={`/data/${selectedFaculty.photo}`} 
+                    alt={selectedFaculty.name}
+                    className="w-16 h-16 rounded-full object-cover border-2 border-foreground-1"
+                    onError={(e) => {
+                      e.target.src = '/data/p1.png'
+                    }}
+                  />
+                  <div>
+                    <h2 className="text-3xl font-bold text-white mb-2">{selectedFaculty.name}</h2>
+                    <p className="text-gray-300 text-lg">{selectedFaculty.specialization}</p>
+                  </div>
+                </div>
+                <button
+                  onClick={closeModal}
+                  className="text-gray-400 hover:text-white text-2xl"
+                >
+                  <i className="fas fa-times"></i>
+                </button>
+              </div>
+
+              <div className="p-6">
+                {/* Faculty Info Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div className="bg-gray-800 rounded-lg p-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <i className="fas fa-globe text-foreground-1"></i>
+                      <h3 className="text-white font-semibold">Country</h3>
+                    </div>
+                    <p className="text-gray-300">{selectedFaculty.country}</p>
+                  </div>
+                  <div className="bg-gray-800 rounded-lg p-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <i className="fas fa-envelope text-foreground-1"></i>
+                      <h3 className="text-white font-semibold">Email</h3>
+                    </div>
+                    <p className="text-gray-300">{selectedFaculty.email}</p>
+                  </div>
+                </div>
+
+                {/* Specialization */}
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i className="fas fa-star text-foreground-1"></i>
+                    Specialization
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed text-lg">{selectedFaculty.specialization}</p>
+                </div>
+
+                {/* Expertise */}
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i className="fas fa-cogs text-foreground-2"></i>
+                    Areas of Expertise
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {selectedFaculty.expertise.map((skill, index) => (
+                      <span key={index} className="bg-foreground-1 text-black px-3 py-2 rounded-lg font-medium">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-700">
+                  <a
+                    href={`mailto:${selectedFaculty.email}`}
+                    className="btn-primary flex items-center justify-center gap-2 flex-1"
+                  >
+                    <i className="fas fa-envelope"></i>
+                    Contact Faculty
+                  </a>
+                  <button
+                    onClick={closeModal}
+                    className="btn-secondary flex items-center justify-center gap-2 flex-1"
+                  >
+                    <i className="fas fa-arrow-left"></i>
+                    Back to Faculty List
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Faculty Areas */}
         <section className="mb-20">

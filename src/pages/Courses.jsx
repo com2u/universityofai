@@ -1,8 +1,108 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import GradientText from '../components/GradientText'
 
 const Courses = () => {
+  const [courses, setCourses] = useState([])
+  const [filteredCourses, setFilteredCourses] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [sortBy, setSortBy] = useState('title')
+  const [sortOrder, setSortOrder] = useState('asc')
+  const [selectedCourse, setSelectedCourse] = useState(null)
+  const [showModal, setShowModal] = useState(false)
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await fetch('/data/courses.json')
+        const data = await response.json()
+        setCourses(data.courses)
+        setFilteredCourses(data.courses)
+        setLoading(false)
+      } catch (error) {
+        console.error('Error fetching courses:', error)
+        setLoading(false)
+      }
+    }
+
+    fetchCourses()
+  }, [])
+
+  useEffect(() => {
+    let filtered = courses.filter(course =>
+      course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      course.subtitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      course.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      course.format.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      course.language.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      course.tools_required.some(tool => tool.toLowerCase().includes(searchTerm.toLowerCase())) ||
+      course.instructors.some(instructor => instructor.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    )
+
+    // Sort the filtered results
+    filtered.sort((a, b) => {
+      let aValue = a[sortBy]
+      let bValue = b[sortBy]
+      
+      if (typeof aValue === 'string') {
+        aValue = aValue.toLowerCase()
+        bValue = bValue.toLowerCase()
+      }
+      
+      if (sortOrder === 'asc') {
+        return aValue < bValue ? -1 : aValue > bValue ? 1 : 0
+      } else {
+        return aValue > bValue ? -1 : aValue < bValue ? 1 : 0
+      }
+    })
+
+    setFilteredCourses(filtered)
+  }, [courses, searchTerm, sortBy, sortOrder])
+
+  const handleSort = (field) => {
+    if (sortBy === field) {
+      setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
+    } else {
+      setSortBy(field)
+      setSortOrder('asc')
+    }
+  }
+
+  const openModal = (course) => {
+    setSelectedCourse(course)
+    setShowModal(true)
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+    setSelectedCourse(null)
+  }
+
+  const getSortIcon = (field) => {
+    if (sortBy !== field) return 'fas fa-sort text-gray-500'
+    return sortOrder === 'asc' ? 'fas fa-sort-up text-foreground-1' : 'fas fa-sort-down text-foreground-1'
+  }
+
+  const getTypeColor = (type) => {
+    switch (type.toLowerCase()) {
+      case 'lecture': return 'bg-blue-600'
+      case 'seminar': return 'bg-green-600'
+      case 'workshop': return 'bg-orange-600'
+      case 'project': return 'bg-purple-600'
+      default: return 'bg-gray-600'
+    }
+  }
+
+  const getFormatIcon = (format) => {
+    switch (format.toLowerCase()) {
+      case 'online': return 'fa-laptop'
+      case 'hybrid': return 'fa-blender'
+      case 'in-person': return 'fa-users'
+      default: return 'fa-question'
+    }
+  }
+
   const courseCategories = [
     {
       title: "AI Foundations & Machine Learning",
@@ -149,7 +249,7 @@ const Courses = () => {
           </div>
         </section>
 
-        {/* Courses Table Placeholder */}
+        {/* Course Catalog */}
         <section className="mb-20">
           <div className="card">
             <h2 className="section-title mb-8">
@@ -157,48 +257,271 @@ const Courses = () => {
               Course Catalog
             </h2>
             <p className="text-lg text-gray-300 mb-8">
-              Courses will be dynamically populated from backend JSON with detailed information 
-              about each offering.
+              Explore our comprehensive course catalog with detailed information about each offering, 
+              including prerequisites, tools, and learning outcomes.
             </p>
             
-            {/* Placeholder Table */}
-            <div className="overflow-x-auto">
-              <table className="w-full bg-gray-900 rounded-lg border border-gray-700">
-                <thead>
-                  <tr className="bg-gray-800">
-                    <th className="px-6 py-4 text-left text-white font-bold">Course Code</th>
-                    <th className="px-6 py-4 text-left text-white font-bold">Course Title</th>
-                    <th className="px-6 py-4 text-left text-white font-bold">Category</th>
-                    <th className="px-6 py-4 text-left text-white font-bold">Duration</th>
-                    <th className="px-6 py-4 text-left text-white font-bold">Level</th>
-                    <th className="px-6 py-4 text-left text-white font-bold">Credits</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-t border-gray-700">
-                    <td className="px-6 py-4 text-gray-300" colSpan="6">
-                      <div className="text-center py-8">
-                        <i className="fas fa-database text-4xl text-foreground-1 mb-4"></i>
-                        <p className="text-lg font-medium text-white mb-2">Course Data Loading...</p>
-                        <p className="text-gray-400">
-                          Course catalog will be loaded dynamically from the backend system with 
-                          real-time updates and availability information.
-                        </p>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            {/* Search and Filter Controls */}
+            <div className="mb-6 flex flex-col md:flex-row gap-4">
+              <div className="flex-1">
+                <div className="relative">
+                  <i className="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                  <input
+                    type="text"
+                    placeholder="Search by title, type, format, tools, or instructor..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-foreground-1"
+                  />
+                </div>
+              </div>
+              <div className="text-gray-300 flex items-center">
+                <i className="fas fa-filter mr-2 text-foreground-1"></i>
+                {filteredCourses.length} of {courses.length} courses
+              </div>
             </div>
-            
-            <div className="mt-6 bg-blue-900 bg-opacity-30 border border-blue-600 rounded-lg p-4">
-              <p className="text-blue-200 text-center">
-                <i className="fas fa-info-circle text-blue-400 mr-2"></i>
-                This table will be populated with real course data once the backend integration is complete.
-              </p>
-            </div>
+
+            {loading ? (
+              <div className="text-center py-12">
+                <i className="fas fa-spinner fa-spin text-4xl text-foreground-1 mb-4"></i>
+                <p className="text-lg font-medium text-white mb-2">Loading Courses...</p>
+                <p className="text-gray-400">Please wait while we fetch the course data.</p>
+              </div>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full bg-gray-900 rounded-lg border border-gray-700">
+                  <thead>
+                    <tr className="bg-gray-800">
+                      <th 
+                        className="px-6 py-4 text-left text-white font-bold cursor-pointer hover:bg-gray-700 transition-colors"
+                        onClick={() => handleSort('title')}
+                      >
+                        <div className="flex items-center gap-2">
+                          Course Title
+                          <i className={getSortIcon('title')}></i>
+                        </div>
+                      </th>
+                      <th 
+                        className="px-6 py-4 text-left text-white font-bold cursor-pointer hover:bg-gray-700 transition-colors"
+                        onClick={() => handleSort('type')}
+                      >
+                        <div className="flex items-center gap-2">
+                          Type
+                          <i className={getSortIcon('type')}></i>
+                        </div>
+                      </th>
+                      <th 
+                        className="px-6 py-4 text-left text-white font-bold cursor-pointer hover:bg-gray-700 transition-colors"
+                        onClick={() => handleSort('ects')}
+                      >
+                        <div className="flex items-center gap-2">
+                          ECTS
+                          <i className={getSortIcon('ects')}></i>
+                        </div>
+                      </th>
+                      <th 
+                        className="px-6 py-4 text-left text-white font-bold cursor-pointer hover:bg-gray-700 transition-colors"
+                        onClick={() => handleSort('duration_weeks')}
+                      >
+                        <div className="flex items-center gap-2">
+                          Duration
+                          <i className={getSortIcon('duration_weeks')}></i>
+                        </div>
+                      </th>
+                      <th 
+                        className="px-6 py-4 text-left text-white font-bold cursor-pointer hover:bg-gray-700 transition-colors"
+                        onClick={() => handleSort('format')}
+                      >
+                        <div className="flex items-center gap-2">
+                          Format
+                          <i className={getSortIcon('format')}></i>
+                        </div>
+                      </th>
+                      <th className="px-6 py-4 text-left text-white font-bold">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {filteredCourses.length === 0 ? (
+                      <tr className="border-t border-gray-700">
+                        <td className="px-6 py-8 text-gray-300 text-center" colSpan="6">
+                          <i className="fas fa-search text-3xl text-gray-500 mb-3"></i>
+                          <p className="text-lg font-medium text-white mb-2">No courses found</p>
+                          <p className="text-gray-400">Try adjusting your search terms</p>
+                        </td>
+                      </tr>
+                    ) : (
+                      filteredCourses.map((course, index) => (
+                        <tr key={index} className="border-t border-gray-700 hover:bg-gray-800 transition-colors">
+                          <td className="px-6 py-4">
+                            <div>
+                              <h3 className="text-white font-semibold text-lg">{course.title}</h3>
+                              <p className="text-gray-400 text-sm">{course.subtitle}</p>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4">
+                            <span className={`px-3 py-1 rounded-full text-white text-sm font-medium ${getTypeColor(course.type)}`}>
+                              {course.type}
+                            </span>
+                          </td>
+                          <td className="px-6 py-4 text-gray-300">
+                            {course.ects} ECTS
+                          </td>
+                          <td className="px-6 py-4 text-gray-300">
+                            {course.duration_weeks} weeks
+                          </td>
+                          <td className="px-6 py-4">
+                            <div className="flex items-center gap-2">
+                              <i className={`fas ${getFormatIcon(course.format)} text-foreground-1`}></i>
+                              <span className="text-gray-300 capitalize">{course.format}</span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4">
+                            <button
+                              onClick={() => openModal(course)}
+                              className="bg-foreground-1 hover:bg-blue-600 text-black hover:text-white px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2"
+                            >
+                              <i className="fas fa-eye"></i>
+                              View Details
+                            </button>
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         </section>
+
+        {/* Course Details Modal */}
+        {showModal && selectedCourse && (
+          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50">
+            <div className="bg-gray-900 rounded-lg max-w-5xl w-full max-h-[90vh] overflow-y-auto border border-gray-700">
+              <div className="sticky top-0 bg-gray-900 border-b border-gray-700 p-6 flex justify-between items-start">
+                <div>
+                  <h2 className="text-3xl font-bold text-white mb-2">{selectedCourse.title}</h2>
+                  <p className="text-gray-300 text-lg mb-3">{selectedCourse.subtitle}</p>
+                  <div className="flex items-center gap-4">
+                    <span className={`px-3 py-1 rounded-full text-white text-sm font-medium ${getTypeColor(selectedCourse.type)}`}>
+                      {selectedCourse.type}
+                    </span>
+                    <span className="text-gray-300">{selectedCourse.ects} ECTS</span>
+                    <span className="text-gray-300">{selectedCourse.duration_weeks} weeks</span>
+                  </div>
+                </div>
+                <button
+                  onClick={closeModal}
+                  className="text-gray-400 hover:text-white text-2xl"
+                >
+                  <i className="fas fa-times"></i>
+                </button>
+              </div>
+
+              <div className="p-6">
+                {/* Course Info Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  <div className="bg-gray-800 rounded-lg p-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <i className={`fas ${getFormatIcon(selectedCourse.format)} text-foreground-1`}></i>
+                      <h3 className="text-white font-semibold">Format</h3>
+                    </div>
+                    <p className="text-gray-300 capitalize">{selectedCourse.format}</p>
+                  </div>
+                  <div className="bg-gray-800 rounded-lg p-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <i className="fas fa-calendar text-foreground-1"></i>
+                      <h3 className="text-white font-semibold">Semester</h3>
+                    </div>
+                    <p className="text-gray-300">Semester {selectedCourse.semester_recommendation}</p>
+                  </div>
+                  <div className="bg-gray-800 rounded-lg p-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <i className="fas fa-globe text-foreground-1"></i>
+                      <h3 className="text-white font-semibold">Language</h3>
+                    </div>
+                    <p className="text-gray-300">{selectedCourse.language}</p>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i className="fas fa-info-circle text-foreground-1"></i>
+                    Course Description
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">{selectedCourse.description}</p>
+                </div>
+
+                {/* Learning Outcomes */}
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i className="fas fa-target text-foreground-2"></i>
+                    Learning Outcomes
+                  </h3>
+                  <div className="grid grid-cols-1 gap-3">
+                    {selectedCourse.learning_outcomes.map((outcome, index) => (
+                      <div key={index} className="bg-gray-800 rounded-lg p-3 flex items-start gap-3">
+                        <i className="fas fa-check-circle text-foreground-2 mt-1"></i>
+                        <span className="text-gray-300">{outcome}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Tools Required */}
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i className="fas fa-tools text-foreground-1"></i>
+                    Tools & Technologies
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {selectedCourse.tools_required.map((tool, index) => (
+                      <span key={index} className="bg-foreground-1 text-black px-3 py-2 rounded-lg font-medium">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Instructors */}
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i className="fas fa-chalkboard-teacher text-foreground-2"></i>
+                    Instructors
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    {selectedCourse.instructors.map((instructor, index) => (
+                      <div key={index} className="bg-gray-800 rounded-lg p-3 flex items-center gap-3">
+                        <i className="fas fa-user-tie text-foreground-1"></i>
+                        <span className="text-white font-medium">{instructor.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-700">
+                  <Link
+                    to="/studies/admissions"
+                    className="btn-primary flex items-center justify-center gap-2 flex-1"
+                    onClick={closeModal}
+                  >
+                    <i className="fas fa-user-plus"></i>
+                    Enroll in Course
+                  </Link>
+                  <button
+                    onClick={closeModal}
+                    className="btn-secondary flex items-center justify-center gap-2 flex-1"
+                  >
+                    <i className="fas fa-arrow-left"></i>
+                    Back to Catalog
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Course Levels */}
         <section className="mb-20">
