@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  university-of-ai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: university-of-ai-website
+    ports:
+      - "7701:7701"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:7701/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.university-of-ai.rule=Host(`university-of-ai.org`)"
+      - "traefik.http.services.university-of-ai.loadbalancer.server.port=7701"
