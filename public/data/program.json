@@ -1,0 +1,112 @@
+{
+  "programs": [
+    {
+      "title": "Applied AI",
+      "type": "Bachelor",
+      "degree": "Bachelor of Science (B.Sc.)",
+      "duration_semesters": 6,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 180
+    },
+    {
+      "title": "Applied AI",
+      "type": "Master",
+      "degree": "Master of Science (M.Sc.)",
+      "duration_semesters": 4,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 120
+    },
+    {
+      "title": "Applied AI – Dual Program",
+      "type": "Bachelor",
+      "degree": "Bachelor of Science (B.Sc.)",
+      "duration_semesters": 6,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 180
+    },
+    {
+      "title": "Applied AI – Dual Program",
+      "type": "Master",
+      "degree": "Master of Science (M.Sc.)",
+      "duration_semesters": 4,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 120
+    },
+    {
+      "title": "AI Data Science",
+      "type": "Bachelor",
+      "degree": "Bachelor of Science (B.Sc.)",
+      "duration_semesters": 7,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 210
+    },
+    {
+      "title": "AI Data Science",
+      "type": "Master",
+      "degree": "Master of Science (M.Sc.)",
+      "duration_semesters": 3,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 90
+    },
+    {
+      "title": "Digital Arts of AI",
+      "type": "Bachelor",
+      "degree": "Bachelor of Science (B.Sc.)",
+      "duration_semesters": 5,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 150
+    },
+    {
+      "title": "Digital Arts of AI",
+      "type": "Master",
+      "degree": "Master of Science (M.Sc.)",
+      "duration_semesters": 3,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 90
+    },
+    {
+      "title": "Digital AI Tools and Applications",
+      "type": "Bachelor",
+      "degree": "Bachelor of Science (B.Sc.)",
+      "duration_semesters": 5,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 150
+    },
+    {
+      "title": "Digital AI Tools and Applications",
+      "type": "Master",
+      "degree": "Master of Science (M.Sc.)",
+      "duration_semesters": 3,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 90
+    },
+    {
+      "title": "AI Application Development",
+      "type": "Bachelor",
+      "degree": "Bachelor of Science (B.Sc.)",
+      "duration_semesters": 6,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 180
+    },
+    {
+      "title": "AI Application Development",
+      "type": "Master",
+      "degree": "Master of Science (M.Sc.)",
+      "duration_semesters": 4,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 120
+    }
+  ]
+}

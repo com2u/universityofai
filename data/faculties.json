@@ -1,0 +1,324 @@
+{
+  "faculties": [
+      {
+      "photo": "p1.png",
+      "name": "Dr. Aisha Lang",
+      "specialization": "AI Ethics & Governance",
+      "expertise": ["Machine Learning", "NLP", "AI Regulation"],
+      "country": "Germany",
+      "email": "a.lang@universityofai.org"
+    },
+    {
+      "photo": "p2.png",
+      "name": "Prof. Kenji Tanaka",
+      "specialization": "Mathematics for AI",
+      "expertise": ["Linear Algebra", "Calculus", "Statistics"],
+      "country": "Japan",
+      "email": "k.tanaka@universityofai.org"
+    },
+    {
+      "photo": "p3.png",
+      "name": "Dr. María González",
+      "specialization": "Programming with Python for AI",
+      "expertise": ["Python", "NumPy", "Matplotlib"],
+      "country": "Spain",
+      "email": "m.gonzalez@universityofai.org"
+    },
+    {
+      "photo": "p4.png",
+      "name": "Dr. Ethan Parker",
+      "specialization": "Machine Learning Fundamentals",
+      "expertise": ["Supervised Learning", "Unsupervised Learning", "Evaluation Techniques"],
+      "country": "United States",
+      "email": "e.parker@universityofai.org"
+    },
+    {
+      "photo": "p5.png",
+      "name": "Prof. Anna Petrova",
+      "specialization": "Deep Learning with Neural Networks",
+      "expertise": ["CNNs", "RNNs", "Transformers"],
+      "country": "Ukraine",
+      "email": "a.petrova@universityofai.org"
+    },
+    {
+      "photo": "p6.png",
+      "name": "Dr. Samuel Ndlovu",
+      "specialization": "Data Science & Analytics",
+      "expertise": ["SQL", "Power BI", "Python"],
+      "country": "South Africa",
+      "email": "s.ndlovu@universityofai.org"
+    },
+    {
+      "photo": "p7.png",
+      "name": "Dr. Clara Dupont",
+      "specialization": "Transfer Learning & Fine-Tuning",
+      "expertise": ["BERT", "Mistral", "LLaMA"],
+      "country": "France",
+      "email": "c.dupont@universityofai.org"
+    },
+    {
+      "photo": "p8.png",
+      "name": "Dr. Yusuf Al-Hakim",
+      "specialization": "AI in Web Development",
+      "expertise": ["Microservices", "APIs", "Frontend AI"],
+      "country": "United Arab Emirates",
+      "email": "y.alhakim@universityofai.org"
+    },
+    {
+      "photo": "p9.png",
+      "name": "Dr. Emilia Rossi",
+      "specialization": "AI for Image & Video Generation",
+      "expertise": ["DALL·E", "Sora", "RunwayML"],
+      "country": "Italy",
+      "email": "e.rossi@universityofai.org"
+    },
+    {
+      "photo": "p10.png",
+      "name": "Prof. Felix Meyer",
+      "specialization": "Speech Recognition & Voice Synthesis",
+      "expertise": ["Whisper", "ElevenLabs", "TTS/STT"],
+      "country": "Switzerland",
+      "email": "f.meyer@universityofai.org"
+    },
+    {
+      "photo": "p11.png",
+      "name": "Dr. Felix Breuer",
+      "specialization": "Intro to AI Robotics & Sensor Integration",
+      "expertise": [
+        "ROS",
+        "OpenCV",
+        "Sensor Fusion"
+      ],
+      "country": "Germany",
+      "email": "f.breuer@university-of-ai.org"
+    },
+    {
+      "photo": "p12.png",
+      "name": "Prof. Helene Moritz",
+      "specialization": "AI for Industrial Automation",
+      "expertise": [
+        "Predictive Maintenance",
+        "PLC Systems",
+        "Industrial AI Simulation"
+      ],
+      "country": "Germany",
+      "email": "h.moritz@university-of-ai.org"
+    },
+    {
+      "photo": "p13.png",
+      "name": "Dr. Jonas Tien",
+      "specialization": "Computer Vision for Automation Systems",
+      "expertise": [
+        "Object Detection",
+        "Edge AI",
+        "OCR"
+      ],
+      "country": "Germany",
+      "email": "j.tien@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Prof. Larissa König",
+      "specialization": "Robotic Process Automation (RPA) with AI",
+      "expertise": [
+        "UIPath",
+        "Automation Anywhere",
+        "NLP Integration"
+      ],
+      "country": "Germany",
+      "email": "l.koenig@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Dr. Marcus Stein",
+      "specialization": "AI & Cybersecurity",
+      "expertise": [
+        "Security Agents",
+        "Anomaly Detection",
+        "Threat Intelligence"
+      ],
+      "country": "Germany",
+      "email": "m.stein@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Prof. Annika Schulz",
+      "specialization": "Data Privacy in AI Systems",
+      "expertise": [
+        "GDPR",
+        "Federated Learning",
+        "Explainable AI"
+      ],
+      "country": "Germany",
+      "email": "a.schulz@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Dr. Tobias Arndt",
+      "specialization": "Ethical Hacking for AI Systems",
+      "expertise": [
+        "Prompt Injection",
+        "LLM Security",
+        "Security by Design"
+      ],
+      "country": "Germany",
+      "email": "t.arndt@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Prof. Nina Heller",
+      "specialization": "Building AI Agents with CrewAI & LangGraph",
+      "expertise": [
+        "Multi-Agent Systems",
+        "LangGraph",
+        "Tool Integration"
+      ],
+      "country": "Germany",
+      "email": "n.heller@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Dr. Kevin Maier",
+      "specialization": "AI for Marketing Analytics & Content Creation",
+      "expertise": [
+        "Targeting AI",
+        "Image Generation",
+        "Campaign Optimization"
+      ],
+      "country": "Germany",
+      "email": "k.maier@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Prof. Isabella Roth",
+      "specialization": "AI in Business Process Optimization",
+      "expertise": [
+        "KPI Monitoring",
+        "Process Bottleneck Analysis",
+        "Workflow Automation"
+      ],
+      "country": "Germany",
+      "email": "i.roth@university-of-ai.org"
+    },
+	    {
+      "photo": "p1.png",
+      "name": "Dr. Miriam Weber",
+      "specialization": "AI in Innovation Management",
+      "expertise": [
+        "Market Trend Detection",
+        "AI Planning",
+        "KPI Modeling"
+      ],
+      "country": "Germany",
+      "email": "m.weber@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Prof. David Lu",
+      "specialization": "AI Product Management",
+      "expertise": [
+        "Agile Methods",
+        "AI Tool Integration",
+        "Product Lifecycle"
+      ],
+      "country": "United States",
+      "email": "d.lu@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Dr. Jana Al-Farsi",
+      "specialization": "AI-Enhanced Customer Support Systems",
+      "expertise": [
+        "Chatbots",
+        "CRM Automation",
+        "Conversational AI"
+      ],
+      "country": "United Arab Emirates",
+      "email": "j.alfarsi@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Prof. Noah Fischer",
+      "specialization": "Startup Incubation with AI",
+      "expertise": [
+        "MVP Building",
+        "AI Pitch Decks",
+        "Startup Funding"
+      ],
+      "country": "Germany",
+      "email": "n.fischer@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Dr. Amelie Yuen",
+      "specialization": "Automation Platforms",
+      "expertise": [
+        "Zapier",
+        "n8n",
+        "Make Automation"
+      ],
+      "country": "Singapore",
+      "email": "a.yuen@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Prof. Rajesh Menon",
+      "specialization": "Advanced Data Structures for AI",
+      "expertise": [
+        "Hash Maps",
+        "Graph Algorithms",
+        "Vector Indexing"
+      ],
+      "country": "India",
+      "email": "r.menon@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Dr. Lea Dubois",
+      "specialization": "Database Systems for AI & Big Data",
+      "expertise": [
+        "SQL & NoSQL",
+        "TimeSeries DBs",
+        "Vector Databases"
+      ],
+      "country": "France",
+      "email": "l.dubois@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Prof. Tobias Meier",
+      "specialization": "Data Engineering in Practice",
+      "expertise": [
+        "ETL",
+        "Airflow",
+        "Delta Lake"
+      ],
+      "country": "Switzerland",
+      "email": "t.meier@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Dr. Olivia Novak",
+      "specialization": "AI in Software Development Workflows",
+      "expertise": [
+        "AI Code Reviews",
+        "Test Generation",
+        "Refactoring with AI"
+      ],
+      "country": "Poland",
+      "email": "o.novak@university-of-ai.org"
+    },
+    {
+      "photo": "p1.png",
+      "name": "Prof. Elias Schneider",
+      "specialization": "Cloud-Native AI Development",
+      "expertise": [
+        "AWS AI Apps",
+        "GCP Deployment",
+        "Azure ML Pipelines"
+      ],
+      "country": "Germany",
+      "email": "e.schneider@university-of-ai.org"
+    }
+  ]
+}

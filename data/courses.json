@@ -1,0 +1,751 @@
+{
+  "courses": [
+    {
+      "title": "Data Curation & Preparation for AI",
+      "subtitle": "Ensuring high-quality data for AI success",
+      "type": "lecture",
+      "description": "Covers essential techniques for data preparation, including cleaning, labeling, augmentation, and pipeline development for machine learning workflows.",
+      "learning_outcomes": [
+        "Apply preprocessing and data cleaning techniques",
+        "Design data pipelines for scalable ML training",
+        "Evaluate and enhance data quality through labeling and augmentation"
+      ],
+      "ects": 5,
+      "semester_recommendation": 2,
+      "duration_weeks": 12,
+      "format": "online",
+      "tools_required": [
+        "Python",
+        "Pandas",
+        "Label Studio",
+        "DVC"
+      ],
+      "language": "English",
+      "instructors": [
+        {
+          "name": "Dr. Ethan Parker"
+        }
+      ]
+    },
+    {
+      "title": "AI Data Structures & Big Data",
+      "subtitle": "Efficient data handling for scalable AI",
+      "type": "lecture",
+      "description": "Focuses on structured and unstructured data management, indexing methods, vector databases, and big data frameworks relevant to AI development.",
+      "learning_outcomes": [
+        "Understand and implement advanced data structures in AI systems",
+        "Utilize vector and graph databases for efficient information retrieval",
+        "Integrate Delta Lake for scalable and reliable data storage"
+      ],
+      "ects": 5,
+      "semester_recommendation": 3,
+      "duration_weeks": 12,
+      "format": "online",
+      "tools_required": [
+        "Python",
+        "Delta Lake",
+        "Pinecone",
+        "MongoDB"
+      ],
+      "language": "English",
+      "instructors": [
+        {
+          "name": "Dr. Emilia Rossi"
+        }
+      ]
+    },
+    {
+      "title": "Data Science & Analytics",
+      "subtitle": "Extracting insights from data using AI tools",
+      "type": "lecture",
+      "description": "Covers practical data science workflows using Python, SQL, and popular visualization tools for deriving insights and building business intelligence dashboards.",
+      "learning_outcomes": [
+        "Query and manipulate data using SQL and Python",
+        "Visualize data with Power BI and Tableau",
+        "Apply data analytics methods to real-world problems"
+      ],
+      "ects": 5,
+      "semester_recommendation": 2,
+      "duration_weeks": 12,
+      "format": "online",
+      "tools_required": [
+        "Python",
+        "SQL",
+        "Power BI",
+        "Tableau"
+      ],
+      "language": "English",
+      "instructors": [
+        {
+          "name": "Dr. Emilia Rossi"
+        }
+      ]
+    },
+    {
+      "title": "Model Evaluation & Optimization",
+      "subtitle": "Improving AI model performance",
+      "type": "seminar",
+      "description": "This course explores strategies for evaluating model performance and applying optimization techniques like cross-validation, hyperparameter tuning, and benchmarking.",
+      "learning_outcomes": [
+        "Perform model validation and diagnostic analysis",
+        "Optimize hyperparameters using grid search and Optuna",
+        "Benchmark and compare model performance across datasets"
+      ],
+      "ects": 5,
+      "semester_recommendation": 4,
+      "duration_weeks": 12,
+      "format": "online",
+      "tools_required": [
+        "scikit-learn",
+        "Optuna",
+        "Matplotlib"
+      ],
+      "language": "English",
+      "instructors": [
+        {
+          "name": "Prof. Isabella Roth"
+        }
+      ]
+    },
+    {
+      "title": "Transfer Learning & Fine-Tuning Techniques",
+      "subtitle": "Leveraging pre-trained models for rapid AI development",
+      "type": "lecture",
+      "description": "Students learn how to use pre-trained AI models (BERT, LLaMA, Mistral) and fine-tune them for custom tasks in NLP, vision, and classification applications.",
+      "learning_outcomes": [
+        "Use pre-trained models effectively in AI systems",
+        "Apply fine-tuning strategies to customize model behavior",
+        "Evaluate and validate fine-tuned models in practice"
+      ],
+      "ects": 5,
+      "semester_recommendation": 5,
+      "duration_weeks": 12,
+      "format": "online",
+      "tools_required": [
+        "Transformers",
+        "Hugging Face",
+        "PyTorch"
+      ],
+      "language": "English",
+      "instructors": [
+        {
+          "name": "Prof. Felix Meyer"
+        }
+      ]
+    },
+    {
+      "title": "AI in Web Development",
+      "subtitle": "Embedding AI in modern web architectures",
+      "type": "lecture",
+      "description": "Explore how to integrate AI into web applications, from frontend components to backend services, including APIs and microservices.",
+      "learning_outcomes": [
+        "Understand the architecture of AI-enabled web applications",
+        "Implement AI models in frontend and backend systems",
+        "Develop and deploy intelligent APIs"
+      ],
+      "ects": 5,
+      "semester_recommendation": 3,
+      "duration_weeks": 12,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Dr. Elias Becker"
+        }
+      ],
+      "tools_required": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "OpenAI API"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "AI for Quality Assurance & Testing",
+      "subtitle": "Boosting QA with AI-driven testing tools",
+      "type": "seminar",
+      "description": "Learn how AI can support software testing, including unit tests, E2E testing, and automated code review.",
+      "learning_outcomes": [
+        "Use AI tools to generate and optimize test cases",
+        "Conduct AI-assisted unit and E2E testing",
+        "Analyze and improve code quality with AI"
+      ],
+      "ects": 4,
+      "semester_recommendation": 4,
+      "duration_weeks": 10,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Prof. Laila Verma"
+        }
+      ],
+      "tools_required": [
+        "Cypress",
+        "JUnit",
+        "Copilot",
+        "CodeWhisperer"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "Prompt Engineering & LLM Orchestration",
+      "subtitle": "Designing efficient prompt chains and AI agents",
+      "type": "workshop",
+      "description": "Hands-on training to build prompt pipelines, design interactions, and orchestrate LLM behavior using tools like LangChain and CrewAI.",
+      "learning_outcomes": [
+        "Design and test effective prompts",
+        "Chain prompts and workflows using orchestration frameworks",
+        "Implement agent-based reasoning logic"
+      ],
+      "ects": 3,
+      "semester_recommendation": 3,
+      "duration_weeks": 8,
+      "format": "hybrid",
+      "instructors": [
+        {
+          "name": "Dr. Yara Okafor"
+        }
+      ],
+      "tools_required": [
+        "LangChain",
+        "CrewAI",
+        "GPT-4",
+        "LangGraph"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "Building Autonomous AI Agents",
+      "subtitle": "From single prompts to self-governing AI workflows",
+      "type": "project",
+      "description": "Project-based course to design and deploy AI agents that plan, store memory, and solve tasks autonomously using agentic frameworks.",
+      "learning_outcomes": [
+        "Build autonomous agent pipelines using LangGraph",
+        "Define memory and role strategies for agent interaction",
+        "Deploy agents for specific use cases such as research or coding"
+      ],
+      "ects": 6,
+      "semester_recommendation": 5,
+      "duration_weeks": 14,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Prof. Lucas Tanaka"
+        }
+      ],
+      "tools_required": [
+        "LangGraph",
+        "AutoGen",
+        "CrewAI",
+        "ChromaDB"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "LLM Application Development",
+      "subtitle": "Full-stack development with modern LLM tools",
+      "type": "lecture",
+      "description": "Develop and deploy applications that utilize LLMs at scale. Work with platforms like Hugging Face, OpenAI, LangSmith, and GPT-4o.",
+      "learning_outcomes": [
+        "Build scalable applications using LLMs",
+        "Integrate and deploy models using cloud platforms",
+        "Monitor, test, and optimize LLM-based applications"
+      ],
+      "ects": 5,
+      "semester_recommendation": 4,
+      "duration_weeks": 12,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Dr. Kai Matsuda"
+        }
+      ],
+      "tools_required": [
+        "LangSmith",
+        "OpenAI",
+        "Hugging Face",
+        "Docker",
+        "Next.js"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "Ethics, Law & AI Society",
+      "subtitle": "Regulatory and ethical foundations for AI systems",
+      "type": "seminar",
+      "description": "Explores ethical challenges, regulatory frameworks, and legal considerations in AI development and deployment.",
+      "learning_outcomes": [
+        "Evaluate ethical implications of AI decision-making",
+        "Understand global data privacy regulations like GDPR and CCPA",
+        "Apply governance models and compliance policies in AI systems"
+      ],
+      "ects": 4,
+      "semester_recommendation": 3,
+      "duration_weeks": 10,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Dr. Lena Hoffmann"
+        }
+      ],
+      "tools_required": [
+        "Google Scholar",
+        "Legal Text Repositories",
+        "Ethics Simulation Platforms"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "AI for Image & Video Generation",
+      "subtitle": "Creative generation using generative models and AI tools",
+      "type": "lecture",
+      "description": "Explore the principles and tools behind image and video generation using AI models such as DALL\u00b7E, MidJourney, and Stable Diffusion.",
+      "learning_outcomes": [
+        "Understand the architecture and operation of generative image and video models",
+        "Apply AI tools to generate creative media content",
+        "Evaluate and compare generative models for different use cases"
+      ],
+      "ects": 5,
+      "semester_recommendation": 2,
+      "duration_weeks": 12,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Dr. Isabel Kraus"
+        }
+      ],
+      "tools_required": [
+        "DALL\u00b7E",
+        "MidJourney",
+        "Stable Diffusion",
+        "RunwayML"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "Speech Recognition & Voice Synthesis",
+      "subtitle": "From audio input to AI-generated voice",
+      "type": "lecture",
+      "description": "This course explores speech-to-text and text-to-speech technologies using Whisper, Deepgram, and ElevenLabs for audio interaction with AI systems.",
+      "learning_outcomes": [
+        "Implement basic speech recognition pipelines",
+        "Utilize AI tools for realistic voice synthesis",
+        "Understand use cases of TTS/STT systems in AI applications"
+      ],
+      "ects": 5,
+      "semester_recommendation": 3,
+      "duration_weeks": 12,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Dr. Julia Neumann"
+        }
+      ],
+      "tools_required": [
+        "Whisper",
+        "Deepgram",
+        "ElevenLabs"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "Generative Design & UX with AI",
+      "subtitle": "Automating UI/UX design with AI capabilities",
+      "type": "seminar",
+      "description": "Learn how to automate the design of user interfaces and flows using generative AI tools and prompt-based systems.",
+      "learning_outcomes": [
+        "Use AI to create wireframes and mockups",
+        "Design user journeys with the help of generative AI tools",
+        "Implement AI-assisted UX testing methodologies"
+      ],
+      "ects": 4,
+      "semester_recommendation": 3,
+      "duration_weeks": 10,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Prof. Amir Taleb"
+        }
+      ],
+      "tools_required": [
+        "Uizard",
+        "Figma AI",
+        "Framer AI"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "3D Model Generation from Data",
+      "subtitle": "Creating dimensional objects from visual data using AI",
+      "type": "workshop",
+      "description": "Hands-on exploration of photogrammetry and 3D generation techniques using AI tools like NeRF and 3DFY.",
+      "learning_outcomes": [
+        "Construct 3D objects from 2D images",
+        "Use AI-based tools for model rendering and refinement",
+        "Prepare data for photogrammetric workflows"
+      ],
+      "ects": 4,
+      "semester_recommendation": 4,
+      "duration_weeks": 8,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Prof. Amir Taleb"
+        }
+      ],
+      "tools_required": [
+        "NeRF",
+        "3DFY",
+        "Meshroom",
+        "Blender"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "AI in Innovation Management",
+      "subtitle": "Using AI to drive strategic innovation",
+      "type": "lecture",
+      "description": "Learn to identify market trends and utilize AI tools for innovation planning and KPI modeling.",
+      "learning_outcomes": [
+        "Detect emerging market opportunities using AI tools",
+        "Apply AI-assisted planning methodologies",
+        "Model and monitor KPIs for innovation outcomes"
+      ],
+      "ects": 5,
+      "semester_recommendation": 4,
+      "duration_weeks": 12,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Prof. Olivia Schmidt"
+        }
+      ],
+      "tools_required": [
+        "Power BI",
+        "ChatGPT",
+        "Notion AI"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "AI Product Management",
+      "subtitle": "Managing AI-driven product lifecycles",
+      "type": "seminar",
+      "description": "Covers AI tool integration in product lifecycles, agile scoping, and team coordination.",
+      "learning_outcomes": [
+        "Understand lifecycle planning for AI products",
+        "Integrate AI tools into product workflows",
+        "Coordinate teams using agile methodology"
+      ],
+      "ects": 5,
+      "semester_recommendation": 5,
+      "duration_weeks": 10,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Dr. Ethan Fischer"
+        }
+      ],
+      "tools_required": [
+        "Jira",
+        "Figma",
+        "Slack AI",
+        "GitHub Copilot"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "AI-Enhanced Customer Support Systems",
+      "subtitle": "Revolutionizing support systems with AI",
+      "type": "workshop",
+      "description": "Design and implement intelligent customer support using chatbots and automated tools.",
+      "learning_outcomes": [
+        "Build AI-based chat and help desk systems",
+        "Understand CRM system integration with AI",
+        "Automate ticketing and support workflows"
+      ],
+      "ects": 3,
+      "semester_recommendation": 3,
+      "duration_weeks": 6,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Lisa Moreno"
+        }
+      ],
+      "tools_required": [
+        "Dialogflow",
+        "Zendesk",
+        "Freshdesk AI"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "Startup Incubation with AI",
+      "subtitle": "From idea to MVP using AI tools",
+      "type": "project",
+      "description": "Students build a startup MVP leveraging AI solutions, prepare investor pitches, and explore funding readiness.",
+      "learning_outcomes": [
+        "Develop MVPs using AI tools",
+        "Create AI-based business models and pitch decks",
+        "Navigate startup incubation and funding landscapes"
+      ],
+      "ects": 6,
+      "semester_recommendation": 6,
+      "duration_weeks": 14,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Alexander Braun"
+        }
+      ],
+      "tools_required": [
+        "Bubble.io",
+        "Pitch.com",
+        "LangChain",
+        "ChatGPT",
+        "Vercel"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "Mastering AI Developer Tools",
+      "subtitle": "VS Code, GitHub Actions, Docker and CI/CD pipelines",
+      "type": "workshop",
+      "description": "Hands-on workshop for setting up AI development environments using popular tools and integrating CI/CD practices.",
+      "learning_outcomes": [
+        "Configure VS Code for AI development",
+        "Integrate GitHub Actions for automation",
+        "Use Docker for environment management",
+        "Apply CI/CD principles to ML workflows"
+      ],
+      "ects": 3,
+      "semester_recommendation": 1,
+      "duration_weeks": 8,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Dr. Sophia Bauer"
+        }
+      ],
+      "tools_required": [
+        "VS Code",
+        "GitHub",
+        "Docker",
+        "GitHub Actions"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "AI on the Cloud",
+      "subtitle": "Deploying AI Models to AWS, Azure, and GCP",
+      "type": "lecture",
+      "description": "Learn how to deploy machine learning models on major cloud platforms and utilize edge computing capabilities.",
+      "learning_outcomes": [
+        "Deploy models on AWS, Azure, and GCP",
+        "Understand edge computing for AI",
+        "Manage cloud resources for ML projects"
+      ],
+      "ects": 4,
+      "semester_recommendation": 2,
+      "duration_weeks": 10,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Prof. Li Wei"
+        }
+      ],
+      "tools_required": [
+        "AWS",
+        "Azure",
+        "GCP",
+        "Docker"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "Automation Platforms: Make, Zapier, n8n",
+      "subtitle": "Integrating AI with automation workflows",
+      "type": "seminar",
+      "description": "Explore how AI can be used in conjunction with no-code and low-code automation platforms for business and technical workflows.",
+      "learning_outcomes": [
+        "Use Make, Zapier, and n8n to build automation",
+        "Integrate AI into business process flows",
+        "Automate repetitive AI-enabled tasks"
+      ],
+      "ects": 2,
+      "semester_recommendation": 2,
+      "duration_weeks": 6,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Dr. Miguel Ortega"
+        }
+      ],
+      "tools_required": [
+        "Make",
+        "Zapier",
+        "n8n"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "AI for Documentation & Knowledge Systems",
+      "subtitle": "Using AI to create, manage, and access knowledge",
+      "type": "lecture",
+      "description": "Study how AI can improve documentation workflows and develop intelligent knowledge systems with RAG, bots, and indexing.",
+      "learning_outcomes": [
+        "Build RAG-powered documentation systems",
+        "Use AI for indexing and retrieval",
+        "Design bots to support knowledge access"
+      ],
+      "ects": 4,
+      "semester_recommendation": 3,
+      "duration_weeks": 8,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Dr. Amira Saleh"
+        }
+      ],
+      "tools_required": [
+        "LangChain",
+        "RAG",
+        "ChromaDB",
+        "FastAPI"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "Advanced Data Structures for AI Applications",
+      "subtitle": "Efficient use of trees, graphs, hash maps, and vectors in AI systems",
+      "type": "lecture",
+      "description": "Explores data structures tailored for AI applications, focusing on performance and optimization.",
+      "learning_outcomes": [
+        "Apply complex data structures in AI pipelines",
+        "Optimize AI performance through structural choices",
+        "Evaluate storage and retrieval strategies"
+      ],
+      "ects": 5,
+      "semester_recommendation": 2,
+      "duration_weeks": 12,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Prof. Emily Zhang"
+        }
+      ],
+      "tools_required": [
+        "Python",
+        "NetworkX",
+        "Jupyter Notebook"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "Database Systems for AI & Big Data",
+      "subtitle": "From traditional SQL to cutting-edge vector databases",
+      "type": "lecture",
+      "description": "Covers databases essential for AI, including relational, NoSQL, time-series, and vector DBs.",
+      "learning_outcomes": [
+        "Design database systems tailored for AI applications",
+        "Compare SQL, NoSQL, and graph databases",
+        "Integrate vector databases like Pinecone and ChromaDB"
+      ],
+      "ects": 5,
+      "semester_recommendation": 3,
+      "duration_weeks": 12,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Dr. Luca Petrov"
+        }
+      ],
+      "tools_required": [
+        "PostgreSQL",
+        "MongoDB",
+        "Pinecone",
+        "ChromaDB"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "Data Engineering in Practice",
+      "subtitle": "Building pipelines for AI systems",
+      "type": "workshop",
+      "description": "Hands-on training in building robust ETL pipelines, data lakes, and model-ready datasets.",
+      "learning_outcomes": [
+        "Build scalable ETL workflows using Airflow and dbt",
+        "Model data for efficient ML usage",
+        "Deploy Delta Lake and other data lake frameworks"
+      ],
+      "ects": 5,
+      "semester_recommendation": 3,
+      "duration_weeks": 10,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Anika M\u00fcller"
+        }
+      ],
+      "tools_required": [
+        "Apache Airflow",
+        "dbt",
+        "Delta Lake"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "Unstructured Data Management",
+      "subtitle": "AI-ready storage and processing for text, images, audio, and video",
+      "type": "lecture",
+      "description": "Teaches techniques for managing unstructured formats in AI workflows.",
+      "learning_outcomes": [
+        "Store and retrieve unstructured data effectively",
+        "Process media types for AI analysis",
+        "Evaluate cloud and local storage strategies"
+      ],
+      "ects": 4,
+      "semester_recommendation": 2,
+      "duration_weeks": 10,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Dr. Reema Nair"
+        }
+      ],
+      "tools_required": [
+        "AWS S3",
+        "TensorFlow I/O",
+        "OpenCV"
+      ],
+      "language": "English"
+    },
+    {
+      "title": "AI-Powered Data Cleaning & Annotation",
+      "subtitle": "Automated preprocessing and labeling with AI",
+      "type": "seminar",
+      "description": "Explores AI-assisted approaches to data labeling, noise reduction, and preprocessing pipelines.",
+      "learning_outcomes": [
+        "Apply AI tools for data annotation",
+        "Reduce data noise with automated filters",
+        "Implement labeling pipelines at scale"
+      ],
+      "ects": 4,
+      "semester_recommendation": 2,
+      "duration_weeks": 8,
+      "format": "online",
+      "instructors": [
+        {
+          "name": "Lina Osei"
+        }
+      ],
+      "tools_required": [
+        "Label Studio",
+        "Roboflow",
+        "Hugging Face Transformers"
+      ],
+      "language": "English"
+    }
+  ]
+}

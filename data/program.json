@@ -1,0 +1,237 @@
+{
+  "programs": [
+    {
+      "id": "prog-001",
+      "title": "Applied AI",
+      "type": "Bachelor",
+      "degree": "Bachelor of Science (B.Sc.)",
+      "duration_semesters": 6,
+      "language": "English",
+      "admission": "None",
+      "credits_ects": 180,
+      "description": "A comprehensive program focusing on practical applications of artificial intelligence in real-world scenarios. Students learn to develop AI solutions for various industries.",
+      "curriculum": [
+        "Introduction to AI and Machine Learning",
+        "Programming for AI (Python, R)",
+        "Data Structures and Algorithms",
+        "Statistics and Probability",
+        "Neural Networks and Deep Learning",
+        "Computer Vision",
+        "Natural Language Processing",
+        "AI Ethics and Responsible AI",
+        "Capstone Project"
+      ],
+      "career_prospects": [
+        "AI Developer",
+        "Machine Learning Engineer",
+        "Data Scientist",
+        "AI Product Manager",
+        "Research Scientist"
+      ]
+    },
+    {
+      "id": "prog-002",
+      "title": "AI Research",
+      "type": "Master",
+      "degree": "Master of Science (M.Sc.)",
+      "duration_semesters": 4,
+      "language": "English",
+      "admission": "Bachelor's degree in Computer Science, Mathematics, or related field",
+      "credits_ects": 120,
+      "description": "An advanced research-focused program designed for students who want to contribute to cutting-edge AI research and development.",
+      "curriculum": [
+        "Advanced Machine Learning Theory",
+        "Research Methodology in AI",
+        "Advanced Neural Networks",
+        "Reinforcement Learning",
+        "AI for Scientific Computing",
+        "Quantum Machine Learning",
+        "AI Safety and Alignment",
+        "Master's Thesis Research",
+        "Publication and Presentation Skills"
+      ],
+      "career_prospects": [
+        "Research Scientist",
+        "PhD Candidate",
+        "Senior AI Engineer",
+        "AI Consultant",
+        "Academic Researcher"
+      ]
+    },
+    {
+      "id": "prog-003",
+      "title": "Data Science",
+      "type": "Bachelor",
+      "degree": "Bachelor of Science (B.Sc.)",
+      "duration_semesters": 6,
+      "language": "English",
+      "admission": "High school diploma with strong mathematics background",
+      "credits_ects": 180,
+      "description": "A comprehensive program combining statistics, programming, and domain expertise to extract insights from complex datasets.",
+      "curriculum": [
+        "Introduction to Data Science",
+        "Statistics and Probability Theory",
+        "Programming (Python, R, SQL)",
+        "Data Visualization",
+        "Machine Learning Fundamentals",
+        "Big Data Technologies",
+        "Business Intelligence",
+        "Data Ethics and Privacy",
+        "Industry Capstone Project"
+      ],
+      "career_prospects": [
+        "Data Scientist",
+        "Data Analyst",
+        "Business Intelligence Analyst",
+        "Quantitative Analyst",
+        "Data Engineer"
+      ]
+    },
+    {
+      "id": "prog-004",
+      "title": "AI Ethics & Policy",
+      "type": "Master",
+      "degree": "Master of Arts (M.A.)",
+      "duration_semesters": 4,
+      "language": "English",
+      "admission": "Bachelor's degree in any field with demonstrated interest in AI ethics",
+      "credits_ects": 120,
+      "description": "An interdisciplinary program examining the ethical, legal, and societal implications of artificial intelligence technologies.",
+      "curriculum": [
+        "Foundations of AI Ethics",
+        "AI Policy and Governance",
+        "Philosophy of Technology",
+        "Legal Aspects of AI",
+        "AI Bias and Fairness",
+        "Privacy and Surveillance",
+        "AI in Healthcare Ethics",
+        "Global AI Governance",
+        "Policy Research Project"
+      ],
+      "career_prospects": [
+        "AI Ethics Consultant",
+        "Policy Researcher",
+        "Regulatory Affairs Specialist",
+        "AI Governance Manager",
+        "Technology Policy Analyst"
+      ]
+    },
+    {
+      "id": "prog-005",
+      "title": "Robotics & AI",
+      "type": "Bachelor",
+      "degree": "Bachelor of Engineering (B.Eng.)",
+      "duration_semesters": 7,
+      "language": "English",
+      "admission": "High school diploma with strong STEM background",
+      "credits_ects": 210,
+      "description": "A hands-on program combining robotics engineering with artificial intelligence to create intelligent autonomous systems.",
+      "curriculum": [
+        "Mechanical Engineering Fundamentals",
+        "Electronics and Control Systems",
+        "Programming for Robotics",
+        "Computer Vision for Robots",
+        "Motion Planning and Control",
+        "Human-Robot Interaction",
+        "Autonomous Systems",
+        "Robot Learning",
+        "Industry Internship",
+        "Senior Design Project"
+      ],
+      "career_prospects": [
+        "Robotics Engineer",
+        "Automation Engineer",
+        "AI Systems Developer",
+        "Research Engineer",
+        "Product Development Engineer"
+      ]
+    },
+    {
+      "id": "prog-006",
+      "title": "Computational Linguistics",
+      "type": "Master",
+      "degree": "Master of Science (M.Sc.)",
+      "duration_semesters": 4,
+      "language": "German",
+      "admission": "Bachelor's degree in Linguistics, Computer Science, or related field",
+      "credits_ects": 120,
+      "description": "A specialized program focusing on the intersection of linguistics and computer science, with emphasis on natural language processing.",
+      "curriculum": [
+        "Theoretical Linguistics",
+        "Computational Morphology",
+        "Syntax and Parsing",
+        "Semantics and Pragmatics",
+        "Machine Translation",
+        "Speech Recognition",
+        "Dialogue Systems",
+        "Corpus Linguistics",
+        "Master's Thesis"
+      ],
+      "career_prospects": [
+        "NLP Engineer",
+        "Computational Linguist",
+        "Language Technology Specialist",
+        "Research Scientist",
+        "AI Language Model Developer"
+      ]
+    },
+    {
+      "id": "prog-007",
+      "title": "AI in Business",
+      "type": "MBA",
+      "degree": "Master of Business Administration (MBA)",
+      "duration_semesters": 3,
+      "language": "English",
+      "admission": "Bachelor's degree and 2+ years work experience",
+      "credits_ects": 90,
+      "description": "An executive program designed for business leaders to understand and implement AI strategies in their organizations.",
+      "curriculum": [
+        "AI Strategy and Innovation",
+        "Digital Transformation",
+        "AI Project Management",
+        "Data-Driven Decision Making",
+        "AI Ethics in Business",
+        "Change Management",
+        "AI Investment and ROI",
+        "Leadership in the AI Era",
+        "Executive Capstone Project"
+      ],
+      "career_prospects": [
+        "Chief AI Officer",
+        "Digital Transformation Manager",
+        "AI Strategy Consultant",
+        "Innovation Manager",
+        "Technology Executive"
+      ]
+    },
+    {
+      "id": "prog-008",
+      "title": "Quantum Computing & AI",
+      "type": "Master",
+      "degree": "Master of Science (M.Sc.)",
+      "duration_semesters": 4,
+      "language": "English",
+      "admission": "Bachelor's degree in Physics, Computer Science, or Mathematics",
+      "credits_ects": 120,
+      "description": "A cutting-edge program exploring the intersection of quantum computing and artificial intelligence technologies.",
+      "curriculum": [
+        "Quantum Mechanics Fundamentals",
+        "Quantum Computing Principles",
+        "Quantum Algorithms",
+        "Quantum Machine Learning",
+        "Quantum Error Correction",
+        "Quantum Software Development",
+        "Hybrid Classical-Quantum Systems",
+        "Quantum AI Applications",
+        "Research Project"
+      ],
+      "career_prospects": [
+        "Quantum Software Engineer",
+        "Quantum Research Scientist",
+        "Quantum Algorithm Developer",
+        "Quantum AI Researcher",
+        "Quantum Technology Consultant"
+      ]
+    }
+  ]
+}

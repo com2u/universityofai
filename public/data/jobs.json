@@ -1,0 +1,60 @@
+{
+  "jobs": [
+    {
+      "id": "job-001",
+      "title": "AI Curriculum Developer",
+      "description": "Design and continuously update course materials for foundational AI education. Work with trainers to ensure content meets latest AI developments.",
+      "skills_required": ["Python", "LLMs", "LangChain", "TensorFlow"],
+      "type": "Full-Time"
+    },
+    {
+      "id": "job-002",
+      "title": "Machine Learning Research Scientist",
+      "description": "Lead cutting-edge research in machine learning algorithms and their applications. Collaborate with industry partners on real-world AI solutions.",
+      "skills_required": ["Python", "PyTorch", "Research", "Statistics", "Deep Learning"],
+      "type": "Full-Time"
+    },
+    {
+      "id": "job-003",
+      "title": "AI Ethics Specialist",
+      "description": "Develop and implement ethical AI guidelines and policies. Ensure responsible AI practices across all university programs and research initiatives.",
+      "skills_required": ["Ethics", "AI Policy", "Legal Framework", "Communication"],
+      "type": "Full-Time"
+    },
+    {
+      "id": "job-004",
+      "title": "Data Science Instructor",
+      "description": "Teach data science fundamentals and advanced analytics to students. Create hands-on projects and real-world case studies.",
+      "skills_required": ["Python", "R", "SQL", "Data Visualization", "Teaching"],
+      "type": "Part-Time"
+    },
+    {
+      "id": "job-005",
+      "title": "AI Platform Engineer",
+      "description": "Build and maintain the technical infrastructure for AI education platforms. Develop scalable systems for online learning and research.",
+      "skills_required": ["Cloud Computing", "Docker", "Kubernetes", "Python", "DevOps"],
+      "type": "Full-Time"
+    },
+    {
+      "id": "job-006",
+      "title": "Student Success Coordinator",
+      "description": "Support student learning journeys and career development. Coordinate mentorship programs and industry partnerships.",
+      "skills_required": ["Communication", "Project Management", "Mentoring", "Career Counseling"],
+      "type": "Full-Time"
+    },
+    {
+      "id": "job-007",
+      "title": "AI Startup Incubator Manager",
+      "description": "Lead the university's AI startup incubator program. Support student entrepreneurs in developing AI-driven businesses.",
+      "skills_required": ["Entrepreneurship", "Business Development", "AI Applications", "Mentoring"],
+      "type": "Full-Time"
+    },
+    {
+      "id": "job-008",
+      "title": "Natural Language Processing Researcher",
+      "description": "Conduct research in NLP and language models. Develop educational content and tools for teaching modern NLP techniques.",
+      "skills_required": ["NLP", "Transformers", "Python", "Research", "Linguistics"],
+      "type": "Contract"
+    }
+  ]
+}
