@@ -160,11 +160,11 @@ const Feedback = () => {
                   <h3 className="text-xl font-bold text-white mb-4">Email Feedback</h3>
                   <p className="text-gray-300 mb-4">Send us your detailed feedback and testimonials</p>
                   <a 
-                    href="mailto:feedback@university-of-ai.edu" 
+                    href="mailto:feedback@university-of-ai.org" 
                     className="btn-primary inline-flex items-center"
                   >
                     <i className="fas fa-envelope mr-2"></i>
-                    feedback@university-of-ai.edu
+                    feedback@university-of-ai.org
                   </a>
                 </div>
                 
@@ -274,7 +274,7 @@ const Feedback = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="mailto:feedback@university-of-ai.edu" 
+              href="mailto:feedback@university-of-ai.org" 
               className="bg-black text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition-colors duration-200 inline-flex items-center"
             >
               <i className="fas fa-envelope mr-2"></i>

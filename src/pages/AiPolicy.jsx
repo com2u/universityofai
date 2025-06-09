@@ -342,11 +342,11 @@ const AiPolicy = () => {
               <h3 className="text-2xl font-bold text-white mb-4">AI Ethics Board</h3>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
                 <a 
-                  href="mailto:ethics@university-of-ai.edu" 
+                  href="mailto:ethics@university-of-ai.org" 
                   className="text-foreground-2 font-bold text-xl hover:underline flex items-center gap-2"
                 >
                   <i className="fas fa-envelope"></i>
-                  ethics@university-of-ai.edu
+                  ethics@university-of-ai.org
                 </a>
               </div>
               <div className="bg-gray-800 rounded-lg p-4">
@@ -425,11 +425,11 @@ const AiPolicy = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="mailto:ethics@university-of-ai.edu" 
+              href="mailto:ethics@university-of-ai.org" 
               className="bg-black text-white px-8 py-4 rounded-lg font-bold hover:bg-gray-800 transition-colors duration-200 inline-flex items-center"
             >
               <i className="fas fa-envelope mr-2"></i>
-              ethics@university-of-ai.edu
+              ethics@university-of-ai.org
             </a>
             <Link 
               to="/university/contact" 

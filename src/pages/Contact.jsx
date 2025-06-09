@@ -7,37 +7,37 @@ const Contact = () => {
     {
       topic: "Admissions & Enrollment",
       contact: "Admissions Office",
-      email: "admissions@university-of-ai.edu",
+      email: "admissions@university-of-ai.org",
       icon: "fa-door-open"
     },
     {
       topic: "Courses & Workshops",
       contact: "Program Coordination",
-      email: "courses@university-of-ai.edu",
+      email: "courses@university-of-ai.org",
       icon: "fa-graduation-cap"
     },
     {
       topic: "Research & Projects",
       contact: "Research Office",
-      email: "research@university-of-ai.edu",
+      email: "research@university-of-ai.org",
       icon: "fa-flask"
     },
     {
       topic: "Career & Internships",
       contact: "Career Services",
-      email: "career@university-of-ai.edu",
+      email: "career@university-of-ai.org",
       icon: "fa-briefcase"
     },
     {
       topic: "AI Ethics & Policy",
       contact: "AI Ethics Board",
-      email: "ethics@university-of-ai.edu",
+      email: "ethics@university-of-ai.org",
       icon: "fa-balance-scale"
     },
     {
       topic: "Press & Partnerships",
       contact: "Communication Department",
-      email: "press@university-of-ai.edu",
+      email: "press@university-of-ai.org",
       icon: "fa-newspaper"
     }
   ]
@@ -47,7 +47,7 @@ const Contact = () => {
       icon: "fa-envelope",
       title: "Email Support",
       description: "Get help via email",
-      contact: "tech-support@university-of-ai.edu",
+      contact: "tech-support@university-of-ai.org",
       availability: "24/7 response within 24 hours"
     },
     {
@@ -105,10 +105,10 @@ const Contact = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Email</h3>
               <a 
-                href="mailto:support@university-of-ai.edu" 
+                href="mailto:support@university-of-ai.org" 
                 className="text-foreground-1 font-bold text-xl hover:underline mb-4 block"
               >
-                support@university-of-ai.edu
+                support@university-of-ai.org
               </a>
               <p className="text-gray-300">For general inquiries and support</p>
             </div>
@@ -188,11 +188,11 @@ const Contact = () => {
           </div>
           <div className="text-center mt-8">
             <a 
-              href="mailto:tech-support@university-of-ai.edu" 
+              href="mailto:tech-support@university-of-ai.org" 
               className="btn-primary text-lg px-8 py-4"
             >
               <i className="fas fa-envelope mr-2"></i>
-              tech-support@university-of-ai.edu
+              tech-support@university-of-ai.org
             </a>
           </div>
         </section>
@@ -371,7 +371,7 @@ const Contact = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="mailto:support@university-of-ai.edu" 
+              href="mailto:support@university-of-ai.org" 
               className="btn-primary text-lg px-8 py-4"
             >
               <i className="fas fa-envelope mr-2"></i>
