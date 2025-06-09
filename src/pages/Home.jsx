@@ -42,16 +42,23 @@ const Home = () => {
           {/* Intro Video Section */}
           <div className="mb-12">
             <div className="bg-gray-800 rounded-lg p-8 max-w-2xl mx-auto border border-gray-700">
-              <div className="aspect-video bg-gray-900 rounded-lg flex items-center justify-center mb-4 border border-gray-600">
-                <i className="fas fa-play-circle text-6xl text-foreground-1"></i>
+              <div className="aspect-video bg-gray-900 rounded-lg mb-4 border border-gray-600 overflow-hidden">
+                <video 
+                  className="w-full h-full object-cover rounded-lg"
+                  controls
+                  poster="/data/p1.png"
+                >
+                  <source src="/data/UniversityOfAI.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <p className="text-gray-300 mb-4">
                 Short clip featuring students, trainers, and real projects
               </p>
-              <button className="btn-primary">
+              <Link to="/news/students" className="btn-primary">
                 <i className="fas fa-play mr-2"></i>
                 Meet Our Students
-              </button>
+              </Link>
             </div>
           </div>
 
