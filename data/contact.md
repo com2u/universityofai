@@ -5,21 +5,21 @@ We’re here to support you — anytime, anywhere.
 Whether you're a student, trainer, applicant, or partner — we’re happy to assist with your questions and feedback.
 
 📨 General Contact
-Email: support@university-of-ai.edu
+Email: support@university-of-ai.org
 Live Chat: Available via campus portal
 
 📂 Departments & Direct Contacts
 Topic	Contact Person / Team	Email
-Admissions & Enrollment	Admissions Office	admissions@university-of-ai.edu
-Courses & Workshops	Program Coordination	courses@university-of-ai.edu
-Research & Projects	Research Office	research@university-of-ai.edu
-Career & Internships	Career Services	career@university-of-ai.edu
-AI Ethics & Policy	AI Ethics Board	ethics@university-of-ai.edu
-Press & Partnerships	Communication Department	press@university-of-ai.edu
+Admissions & Enrollment	Admissions Office	admissions@university-of-ai.org
+Courses & Workshops	Program Coordination	courses@university-of-ai.org
+Research & Projects	Research Office	research@university-of-ai.org
+Career & Internships	Career Services	career@university-of-ai.org
+AI Ethics & Policy	AI Ethics Board	ethics@university-of-ai.org
+Press & Partnerships	Communication Department	press@university-of-ai.org
 
 🛠️ Technical Support
 Platform login, media, e-learning & tools
-📧 tech-support@university-of-ai.edu
+📧 tech-support@university-of-ai.org
 Available 24/7 via email or support ticket system on the student portal.
 
 📌 Campus Address

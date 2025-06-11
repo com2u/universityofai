@@ -40,7 +40,7 @@ Dual Certification Tracks	Build customized training for your workforce
 📬 Become a Partner
 We are always open to forward-thinking collaborations.
 Interested in partnering with us? Get in touch via:
-📧 partners@university-of-ai.edu
+📧 partners@university-of-ai.org
 
 🧠 Together, we can teach and build the next generation of intelligent systems.
 Let's create what’s next.

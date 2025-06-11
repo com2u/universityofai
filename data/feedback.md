@@ -29,7 +29,7 @@ Our trainers are not just teachers, but practitioners and AI builders. They brin
 We’d love to hear your voice!
 If you're a current or past student, trainer, or partner of the University of AI, tell us what your journey has been like.
 
-📩 Submit your feedback to: feedback@university-of-ai.edu
+📩 Submit your feedback to: feedback@university-of-ai.org
 or use the Feedback Form
 
 🧠 Every voice helps shape the future of our University.

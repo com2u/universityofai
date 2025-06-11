@@ -48,7 +48,7 @@ Interview Round(s): Depending on the role, you'll meet department leads or facul
 Decision & Offer: We aim to give feedback within 14 days of your interview.
 
 💬 Still Have Questions?
-Reach out to our HR team directly at jobs@university-of-ai.edu
+Reach out to our HR team directly at jobs@university-of-ai.org
 We're happy to help you find your place in the future of education and technology.
 
 Your future begins here. Let's build it together.

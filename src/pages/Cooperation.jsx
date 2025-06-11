@@ -209,10 +209,10 @@ const Cooperation = () => {
                 </h3>
                 <p className="text-white text-lg mb-6">Get in touch via:</p>
                 <a 
-                  href="mailto:partners@university-of-ai.edu" 
+                  href="mailto:partners@university-of-ai.org" 
                   className="text-foreground-2 font-bold text-2xl hover:underline"
                 >
-                  📧 partners@university-of-ai.edu
+                  📧 partners@university-of-ai.org
                 </a>
               </div>
               <div className="bg-gradient-to-r from-foreground-1 to-foreground-2 rounded-lg p-6">
@@ -273,7 +273,7 @@ const Cooperation = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="mailto:partners@university-of-ai.edu" 
+              href="mailto:partners@university-of-ai.org" 
               className="btn-primary text-lg px-8 py-4"
             >
               <i className="fas fa-envelope mr-2"></i>
