@@ -97,7 +97,7 @@ Participate in ethical workshops and contribute to policy improvements
 Concerns or violations regarding AI use can be reported confidentially to:
 
 AI Ethics Board
-📧 ethics@university-of-ai.edu
+📧 ethics@university-of-ai.org
 🛡️ Review board includes legal, technical, and ethics representatives
 
 🤝 Continuous Improvement

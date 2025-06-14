@@ -70,7 +70,7 @@ Adjunct lecturers
 
 Research assistants (student or professional)
 
-🔗 Visit our Careers Page for open positions or contact us at academic@university-of-ai.edu
+🔗 Visit our Careers Page for open positions or contact us at academic@university-of-ai.org
 
 At the University of AI, science is not static – it evolves with every experiment, every agent, and every student.
 Let’s shape the intelligent future together.

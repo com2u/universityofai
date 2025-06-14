@@ -284,11 +284,11 @@ const Career = () => {
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="mailto:jobs@university-of-ai.edu" 
+              href="mailto:jobs@university-of-ai.org" 
               className="btn-primary text-lg px-8 py-4"
             >
               <i className="fas fa-envelope mr-2"></i>
-              jobs@university-of-ai.edu
+              jobs@university-of-ai.org
             </a>
             <Link to="/university/contact" className="btn-secondary text-lg px-8 py-4">
               <i className="fas fa-phone mr-2"></i>
