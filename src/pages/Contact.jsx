@@ -1,8 +1,83 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import GradientText from '../components/GradientText'
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+      setSubmitStatus({ type: 'error', message: 'Please fill in all required fields.' })
+      setIsSubmitting(false)
+      return
+    }
+
+    // Create email content with better formatting
+    const emailSubject = `Contact Form: ${formData.subject}`
+    const emailBody = `Hello University of AI Support Team,
+
+I am contacting you regarding: ${formData.subject}
+
+Contact Information:
+- Name: ${formData.name}
+- Email: ${formData.email}
+
+Message:
+${formData.message}
+
+Best regards,
+${formData.name}
+
+---
+This message was sent via the University of AI Contact Form`
+
+    // Create mailto link
+    const mailtoLink = `mailto:support@university-of-ai.org?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
+
+    // Debug: Log the email content to console
+    console.log('Email Subject:', emailSubject)
+    console.log('Email Body:', emailBody)
+    console.log('Mailto Link Length:', mailtoLink.length)
+
+    try {
+      // Open email client
+      window.location.href = mailtoLink
+      
+      // Reset form and show success message
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      })
+      setSubmitStatus({ type: 'success', message: 'Email client opened successfully! Please send the email from your email application.' })
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: 'Failed to open email client. Please try again or contact us directly at support@university-of-ai.org' })
+    }
+
+    setIsSubmitting(false)
+  }
   const departments = [
     {
       topic: "Admissions & Enrollment",
@@ -309,50 +384,81 @@ const Contact = () => {
               Send Us a Message
             </h2>
             <div className="max-w-2xl mx-auto">
-              <form className="space-y-6">
+              {submitStatus && (
+                <div className={`mb-6 p-4 rounded-lg ${
+                  submitStatus.type === 'success' 
+                    ? 'bg-green-900 border border-green-700 text-green-300' 
+                    : 'bg-red-900 border border-red-700 text-red-300'
+                }`}>
+                  <p>{submitStatus.message}</p>
+                </div>
+              )}
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-white font-medium mb-2">Name *</label>
                     <input 
                       type="text" 
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-foreground-1 focus:outline-none"
                       placeholder="Your full name"
+                      required
                     />
                   </div>
                   <div>
                     <label className="block text-white font-medium mb-2">Email *</label>
                     <input 
                       type="email" 
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-foreground-1 focus:outline-none"
                       placeholder="your.email@example.com"
+                      required
                     />
                   </div>
                 </div>
                 <div>
                   <label className="block text-white font-medium mb-2">Subject *</label>
-                  <select className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-foreground-1 focus:outline-none">
+                  <select 
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-foreground-1 focus:outline-none"
+                    required
+                  >
                     <option value="">Select a topic</option>
-                    <option value="admissions">Admissions & Enrollment</option>
-                    <option value="courses">Courses & Programs</option>
-                    <option value="research">Research & Projects</option>
-                    <option value="career">Career Opportunities</option>
-                    <option value="partnership">Partnership Inquiry</option>
-                    <option value="technical">Technical Support</option>
-                    <option value="other">Other</option>
+                    <option value="Admissions & Enrollment">Admissions & Enrollment</option>
+                    <option value="Courses & Programs">Courses & Programs</option>
+                    <option value="Research & Projects">Research & Projects</option>
+                    <option value="Career Opportunities">Career Opportunities</option>
+                    <option value="Partnership Inquiry">Partnership Inquiry</option>
+                    <option value="Technical Support">Technical Support</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
                 <div>
                   <label className="block text-white font-medium mb-2">Message *</label>
                   <textarea 
                     rows="6"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:border-foreground-1 focus:outline-none"
                     placeholder="Tell us how we can help you..."
+                    required
                   ></textarea>
                 </div>
                 <div className="text-center">
-                  <button type="submit" className="btn-primary text-lg px-8 py-4">
-                    <i className="fas fa-paper-plane mr-2"></i>
-                    Send Message
+                  <button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className={`btn-primary text-lg px-8 py-4 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  >
+                    <i className={`fas ${isSubmitting ? 'fa-spinner fa-spin' : 'fa-paper-plane'} mr-2`}></i>
+                    {isSubmitting ? 'Processing...' : 'Send Message'}
                   </button>
                 </div>
               </form>
